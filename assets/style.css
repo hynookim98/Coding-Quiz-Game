@@ -1,0 +1,24 @@
+:root {
+    --headertxt: #FFFFFF;
+    --headertxtHover: #51FF00;
+    --mainbackground: #002BFF;
+    --bodytext: #FFFC31;
+
+}
+
+body {
+    font-family:'Courier New', Courier, monospace;
+    font-size:150%;
+    background-color: var(--mainbackground);
+    color: var(--bodytext);
+}
+
+a {
+    color: var(--headertxt);
+    text-decoration: none;
+    /* transition: color 0.1s; */
+}
+
+a:hover {
+    color: var(--headertxtHover);
+}
