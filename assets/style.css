@@ -3,7 +3,8 @@
     --headertxtHover: #51FF00;
     --mainbackground: #002BFF;
     --bodytext: #FFFC31;
-
+    --button: #858585; 
+    --buttonText: #00FF42;
 }
 
 body {
@@ -16,9 +17,27 @@ body {
 a {
     color: var(--headertxt);
     text-decoration: none;
-    /* transition: color 0.1s; */
+    transition: color 0.5s;
 }
 
 a:hover {
     color: var(--headertxtHover);
+}
+
+button {
+    display:inline-block;
+    margin: 5px;
+    cursor: pointer;
+    font-size: 100%;
+    background-color: var(--button);
+    color: var(--buttonText);
+    border-radius: 8px;
+    padding: 4px 10px;
+    border: 2px solid black;
+    transition: background-color 0.5s;
+}
+
+button:hover {
+    background-color: white;
+    font-weight: bold;
 }
