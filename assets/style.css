@@ -1,3 +1,4 @@
+/* universal variables to hold colors for page */
 :root {
     --headertxt: #FFFFFF;
     --headertxtHover: #51FF00;
@@ -8,36 +9,99 @@
 }
 
 body {
+    /* setting font for page */
     font-family:'Courier New', Courier, monospace;
+    /* universal size for body */
     font-size:150%;
+    /* adding color to page */
     background-color: var(--mainbackground);
     color: var(--bodytext);
 }
 
 a {
+    /* setting separate color for links and taking off underline text decoration*/
     color: var(--headertxt);
     text-decoration: none;
+    /* setting a small transition for hovering over links */
     transition: color 0.5s;
 }
 
 a:hover {
+    /* different color for hovering over links */
     color: var(--headertxtHover);
 }
 
 button {
-    display:inline-block;
-    margin: 5px;
+    /* setting button display to flex and centering button on page */
+    display: flex;
+    margin: 20px auto 5px auto;
+    /* nmakes it so cursor changes to pointer when hovering over button */
     cursor: pointer;
     font-size: 100%;
     background-color: var(--button);
     color: var(--buttonText);
+    /* border radius for circle button */
     border-radius: 8px;
     padding: 4px 10px;
     border: 2px solid black;
+    /* transition timing for hovering color */
     transition: background-color 0.5s;
 }
 
 button:hover {
+    /* hover effects for button */
     background-color: white;
     font-weight: bold;
 }
+
+/* home {
+    justify-content: space-between;
+} */
+
+
+.start {
+    /* formatting text  */
+    text-align: center;
+    margin: 10px;
+    
+}
+
+.pageWrap {
+    /* format html boxes onto page */
+    margin: 100px auto 0 auto;
+    max-width: 600px;
+}
+
+
+.scores {
+    /* places highscore tab on top left of page */
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.timer {
+    /* places timer in top right of page */
+    position: absolute;
+    top: 10px; 
+    right: 10px;
+    /* changes cursor to text cursor when hovering */
+    cursor: text;
+}
+
+
+
+
+/* .scores {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+} */
+
+/* .choices button {
+    display:block;
+} */
+
+/* input[type="text"] {
+    font-size: 100%;
+} */

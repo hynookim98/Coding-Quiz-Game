@@ -16,16 +16,27 @@
     <!-- timer for top right -->
     <home class="timer">Time: <span id="time">0</span></home>
 
-    <home class="home">
-        <home id="main-page" class="start">
-            <h1>Coding Quiz Challenge</h1>
-            <p>
-                Try to answer the following code-based questions within the time limit.
-                Keep in mind that incorrect answers will penalize your score/time by
-                15 seconds!
-            </p>
-            <button id="start">Start Quiz Game!</button>
-        </home>
+    <home>
+        <div class="pageWrap">
+            <home id="main-page" class="start">
+                <h1>Coding Quiz Challenge</h1>
+                <p>
+                    Try to answer the following code-based questions within the time limit.
+                    Keep in mind that incorrect answers will penalize your score/time by
+                    15 seconds!
+                </p>
+                
+                <button id="start">Start Quiz Game!</button>
+            
+            </home>
+        </div>
+
+        <div id="questions" class="hide">
+            <h2 id="question-title"></h2>
+            <div id="choices" class="choices"></div>
+        </div>
+
+        
     </home>
 
     <script src="./assets/script.js"></script>
