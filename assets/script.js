@@ -51,6 +51,7 @@ function chooseQuestion() {
         var choiceBtn = document.createElement('button');
 
         choiceBtn.setAttribute('class', 'choiceClick');
+        // choiceBtn.setAttribute('value', problem)
         choiceBtn.textContent = diffChoices;
 
         choices.append(choiceBtn); //append child???
@@ -66,8 +67,13 @@ function choiceClicked(event) {
         return
     }
 
-    if (clicked.value !== questionList[questionIndex].answer) { //FIX IT
+    console.log(questionList[questionIndex].answer);
+    console.log(clicked);
+    console.log(clicked.textContent);
+
+    if (clicked.textContent !== questionList[questionIndex].answer) { //FIX IT
         time -= 15;
+        console.log("wrong answer");
 
         if (time < 0) {
             time = 0;
@@ -77,7 +83,9 @@ function choiceClicked(event) {
 
         // place audio cue here
 
-    } 
+    } else {
+        console.log("Correct Answer!");
+    }
 
     questionIndex++;
 
@@ -125,22 +133,22 @@ function scoreEnter(event) {
     }
 }
 
-function printHighscores() {
-    var highscores = JSON.parse(window.localStorage.getItem("highscores"));
+// function printHighscores() {
+//     var highscores = JSON.parse(window.localStorage.getItem("highscores"));
 
-    console.log("printHightscores is running");
+//     console.log("printHightscores is running");
 
-    highscores.sort(function (a,b) {
-        return b.score - a.score;
-    });
+//     highscores.sort(function (a,b) {
+//         return b.score - a.score;
+//     });
 
-    for (var i=0; i < highscores.length; i++) {
-        var scoreLine = document.createElement('li');
-        scoreLine.textContent = highscores[i].initials + " - " + highscores[i].scores;
+//     for (var i=0; i < highscores.length; i++) {
+//         var scoreLine = document.createElement('li');
+//         scoreLine.textContent = highscores[i].initials + " - " + highscores[i].scores;
         
-        var orderedList
-    }
-}
+//         var orderedList
+//     }
+// }
 
 // event listeners
 // when user presses start button it will run function startQuizGame
@@ -150,6 +158,6 @@ choices.onclick = choiceClicked;
 submitButton.onclick = saveScore;
 initials.onkeyup = scoreEnter;
 
-if (window.location.pathname == "./view-highscores.html") {
-    printHighscores();
-}
+// if (window.location.pathname == "./view-highscores.html") {
+//     printHighscores();
+// }
