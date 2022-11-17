@@ -8,6 +8,11 @@
     --buttonText: #00FF42;
 }
 
+h2, p {
+    /* centers question on page */
+    text-align: center;
+}
+
 body {
     /* setting font for page */
     font-family:'Courier New', Courier, monospace;
