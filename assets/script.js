@@ -67,10 +67,6 @@ function choiceClicked(event) {
         return
     }
 
-    console.log(questionList[questionIndex].answer);
-    console.log(clicked);
-    console.log(clicked.textContent);
-
     if (clicked.textContent !== questionList[questionIndex].answer) { //FIX IT
         time -= 15;
         console.log("wrong answer");
