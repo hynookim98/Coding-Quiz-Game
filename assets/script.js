@@ -8,7 +8,7 @@ var lastScreen = document.getElementById('end-screen');
 var score = document.getElementById('final-score');
 var initials = document.getElementById("user-initials");
 var submitButton = document.getElementById('submit');
-
+console.log(window.location.pathname);
 
 // giving user around 10 seconds per question
 var time = questionList.length * 10;
@@ -61,7 +61,7 @@ function chooseQuestion() {
 function choiceClicked(event) {
     var clicked = event.target;
 
-    // does nothing is user clicks on blank areas on page
+    // does nothing if user clicks on blank areas on page
     if(!clicked.matches('.choiceClick')) {
         return
     }
@@ -103,19 +103,20 @@ function saveScore() {
     //saves user input and removes excess space from input before saving
     var userInitials = initials.value.trim();
 
-    if (initials === null) {
-        var highscores = JSON.parse(window.localStorage.getItem("highscores"));
-        
+    if (userInitials !== '') {
+        var highscores = JSON.parse(window.localStorage.getItem("highscores")) || [];
+
         var currentUserScore = {
             score: time,
             initials: userInitials
         };
 
         highscores.push(currentUserScore);
-        window.localStorage.setItem("highscores", JSON.stringify(highscores))
+        window.localStorage.setItem("highscores", JSON.stringify(highscores));
+        
+        window.location.href = 'view-highscores.html';
     
-        window.location.href = "view-highscores.html";
-    }   
+    }
 }
 
 function scoreEnter(event) {
@@ -124,10 +125,31 @@ function scoreEnter(event) {
     }
 }
 
+function printHighscores() {
+    var highscores = JSON.parse(window.localStorage.getItem("highscores"));
+
+    console.log("printHightscores is running");
+
+    highscores.sort(function (a,b) {
+        return b.score - a.score;
+    });
+
+    for (var i=0; i < highscores.length; i++) {
+        var scoreLine = document.createElement('li');
+        scoreLine.textContent = highscores[i].initials + " - " + highscores[i].scores;
+        
+        var orderedList
+    }
+}
+
 // event listeners
 // when user presses start button it will run function startQuizGame
 startButton.onclick = startQuizGame;
 choices.onclick = choiceClicked;
+
 submitButton.onclick = saveScore;
 initials.onkeyup = scoreEnter;
 
+if (window.location.pathname == "./view-highscores.html") {
+    printHighscores();
+}

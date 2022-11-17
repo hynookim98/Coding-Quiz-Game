@@ -8,7 +8,7 @@
     --buttonText: #00FF42;
 }
 
-h2, p {
+h1, h2, p {
     /* centers question on page */
     text-align: center;
 }
