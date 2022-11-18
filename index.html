@@ -18,6 +18,7 @@
 
     <home>
         <div class="pageWrap">
+            <!-- first page -->
             <home id="main-page" class="start">
                 <h1>Coding Quiz Challenge</h1>
                 <p>
@@ -26,11 +27,14 @@
                     15 seconds!
                 </p>
                 
+                <!-- button to start the program (link to js) -->
                 <button id="start">Start Quiz Game!</button>
             
             </home>
         </div>
 
+        <!-- container for questions and multiple choice -->
+        <!-- hide class hides container from user until game is started -->
         <div id="problems" class="hide">
             <h2 id="question"></h2>
             <div id="choices" class="choices"></div>
@@ -38,15 +42,25 @@
 
         <!-- <div id="questionUI" class="hide"></div> -->
 
+        <!-- last screen meant to be shown after game is finished -->
+        <!-- hide screen until user reaches end of game -->
         <end id="end-screen" class="hide">
             <h2>You have completed the game!</h2>
+            <!-- score is whatever time user has left after answering all the questions -->
             <p>Your final score is <span id="final-score"></span>.</p>
+            <!-- input line for user to enter initials -->
             <p>Enter initials: <input type="text" id="user-initials" max="5" />
+            <!-- if user presses submit button or presses Enter - user initials and score is saved to highscores -->
             <button id="submit">Submit</button></p>
         </end>
         
     </home>
 
+    <footer>
+        <p class="bottom">Created from the desk of Matthew Kim</p>
+    </footer>
+    <!-- link to java script -->
+    <!-- separate js for questions array -->
     <script src="./assets/questionList.js"></script>
 
     <script src="./assets/script.js"></script>

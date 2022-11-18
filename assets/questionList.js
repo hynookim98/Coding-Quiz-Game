@@ -1,3 +1,5 @@
+// separate js file to hold array of questions
+
 var questionList = [
     {
         question: "Javascript is an _________ language.",

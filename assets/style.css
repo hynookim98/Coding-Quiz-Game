@@ -63,6 +63,19 @@ button:hover {
     justify-content: space-between;
 } */
 
+/* styling code to keep footer fixed on bottom of page */
+.bottom {
+    width: 100%;
+    height: 80px;
+    padding: 1px;
+    -moz-border-radius: 35px;
+    border-radius: 35px;
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 .start {
     /* formatting text  */
@@ -87,22 +100,26 @@ button:hover {
 
 
 ol {
+    /* format scores */
     padding-left: 0px;
     max-height: 400px;
     overflow: auto;
 }
   
 li {
+    /* format list items */
     padding: 5px;
     list-style: decimal inside none;
 } 
   
 li:nth-child(odd) {
+    /* make every other list item background of darkgrey */
     background-color: darkgray;
     font-weight: bold;
 }
 
 li:nth-child(even) {
+    /* makes every other list item background of black */
     background-color: black;
     font-weight: bold;
 }
@@ -120,21 +137,3 @@ li:nth-child(even) {
     /* hides the object when it has the class of hide */
     display: none;
 }
-
-
-
-
-
-/* .scores {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-} */
-
-/* .choices button {
-    display:block;
-} */
-
-/* input[type="text"] {
-    font-size: 100%;
-} */

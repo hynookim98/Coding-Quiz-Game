@@ -2,25 +2,27 @@
 var clearButton = document.getElementById('clear');
 
 function printHighscores() {
+    // grabs stored object highscores from local storage
     var highscores = JSON.parse(window.localStorage.getItem("highscores"));
 
+    // sorts highscores by scores
     highscores.sort(function (a,b) {
         return b.score - a.score;
     });
 
+    // console log for debugging
     console.log(highscores);
 
     for (var i=0; i < highscores.length; i++) {
-
-        // conditional statement to see if score is zero. displays as zero instead of undefined
-        // if(highscores[i].scores === undefined) {
-        //     highscores[i].scores = "0";
-        // }
-
+        // loop over each score element and create a new line for each one
         var scoreLine = document.createElement('li');
+
+        // displays user initials and score with a '-' between
         scoreLine.textContent = highscores[i].initials + " - " + highscores[i].score;
         
+        // create variable and grab DOM element
         var orderedList = document.getElementById('highscores');
+        // display to user
         orderedList.append(scoreLine);
     }
 }
@@ -32,5 +34,8 @@ function clearScores() {
     window.location.reload();
 }
 
+// runs function to clear scores when button is clicked
 clearButton.onclick = clearScores;
+
+// function to run when page is first loaded
 printHighscores();
